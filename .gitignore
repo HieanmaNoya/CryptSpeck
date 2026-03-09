@@ -1,0 +1,7 @@
+.idea
+/src
+/vendor
+composer.json
+composer.lock
+speck.php
+hash.php
