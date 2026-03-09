@@ -1,0 +1,18 @@
+{
+    "name": "noya/crypt",
+    "description": "Криптография",
+    "autoload": {
+        "psr-4": {
+            "Noya\\Crypt\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "HiaenmaNoya",
+            "email": "komstamtimovn232@gmail.com"
+        }
+    ],
+    "require": {
+        "phpseclib/phpseclib": "~2.0"
+    }
+}
