@@ -1,17 +1,12 @@
 <?php
 class moveBytes
 {
-    private $bits;
-    public function __construct($bits = 128)
-    {
-        $this->bits = $bits;
+    function rotateLeft($value, $shift) {
+        $shift %= 3;
+        return ($value << $shift) | ($value >> (3 - $shift));
     }
-    public function moveRight($key, $move)
-    {
-        return $key >> $move;
-    }
-    public function moveLeft($key, $move)
-    {
-        return $key << $move;
+    function rotateRight($value, $shift) {
+        $shift %= 8;
+        return ($value >> $shift) | ($value >> (8 - $shift));
     }
 }
