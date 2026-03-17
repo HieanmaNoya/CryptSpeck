@@ -1,12 +1,12 @@
 <?php
 include __DIR__ . "/moveBytes.php";
-const mR = 3;
+const mR = 8;
 //1001000
 //11000
 const mL = 3;
 $pt1 = 0x7061706572636c69;
 $pt2 = 0x7073646f6e657273;
-echo "Ключ на входе: " . $key = 14 . "\n";
+echo "Ключ на входе: " . $key = 1000 . "\n";
 echo "Двоичное представление ключа: " . decbin($key) . "\n";
 
 $mover = new moveBytes();
