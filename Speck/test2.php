@@ -1,6 +1,6 @@
 <?php
-$value = 18446744073709551615;
-$n = 8;
+$value = 15;
+$n = 3;
 echo "Битовое значение переменной: " . decbin($value) . "\n";
 $mask = (1 << $n) - 1;
 $dropped = $value & $mask;

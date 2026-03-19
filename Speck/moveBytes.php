@@ -3,10 +3,15 @@ class moveBytes
 {
     #define ROR(x, r) ((x >> r) | (x << (64 - r)))
     #define ROL(x, r) ((x << r) | (x >> (64 - r)))
-    function rotateLeft($value, $shift) {
-        return ($value << $shift) | ($value >> (5 - $shift));
+    function rotateLeft($value, $shift){
+        $bits = 64;
+        $mask = (1 << $bits) - 1;
+        return (($value << $shift) | ($value >> ($bits - $shift))) & $mask;
     }
+
     function rotateRight($value, $shift) {
-        return ($value >> $shift) | ($value << (5 - $shift));
+        $bits = 64;
+        $mask = (1 << $bits) - 1;
+        return (($value >> $shift) | ($value << ($bits - $shift))) & $mask;
     }
 }

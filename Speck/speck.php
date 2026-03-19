@@ -1,24 +1,31 @@
 <?php
 include __DIR__ . "/moveBytes.php";
-const mR = 8;
-//1001000
-//11000
-const mL = 3;
-$pt1 = 0x7061706572636c69;
-$pt2 = 0x7073646f6e657273;
-echo "Ключ на входе: " . $key = 1000 . "\n";
-echo "Двоичное представление ключа: " . decbin($key) . "\n";
-
 $mover = new moveBytes();
-$key = $mover->rotateRight($key, mR);
-echo "Смещение ключа вправо: " . $key . "\n";
-echo "Двоичное представление ключа: " . decbin($key) . "\n";
+const mR = 3;
+const mL = 3;
+$key = [0x7061706572636c69, 0x7073646f6e657273];
+$pt1 = 0x7061706572636c67;
+$pt2 = 0x7073646f6e657252;
 
-$key = $mover->rotateLeft($key, mL);
-echo "Смещение ключа влево: " . $key . "\n";
-echo "Двоичное представление ключа: " . decbin($key) . "\n";
-echo "Двоичное представление слова: " . decbin($pt1) . "\n";
-echo "Байтовая длинная слова: " . $pt1 = PHP_INT_SIZE. "\n";
-echo "Битовая длинная слова: " . $pt1 = PHP_INT_SIZE * 8  . "\n";
+echo "Ключ на входе: [" . $key[0] . " и " . $key[1] . "]\n" . "\n";
+echo "Двоичное представление ключа[0]: " . decbin($key[0]) . "\n";
+echo "Двоичное представление ключа[1]: " . decbin($key[1]) . "\n" . "\n";
 
+$key[0] = $mover->rotateRight($key[0], mR);
+$key[1] = $mover->rotateRight($key[1], mR);
+
+echo "Смещение ключа вправо: [" . $key[0] . ", " . $key[1] . "]\n";
+echo "Двоичное представление ключа[0]: " . decbin($key[0]) . "\n";
+echo "Двоичное представление ключа[1]: " . decbin($key[1]) . "\n" . "\n";
+
+$key[0] = $mover->rotateLeft($key[0], mL);
+$key[1] = $mover->rotateLeft($key[1], mL);
+
+echo "Смещение ключа влево: [" . $key[0] . ", " . $key[1] . "]\n";
+echo "Двоичное представление ключа[0]: " . decbin($key[0]) . "\n";
+echo "Двоичное представление ключа[1]: " . decbin($key[1]) . "\n" . "\n";
+
+echo "Двоичное представление pt1: " . decbin($pt1) . "\n";
+echo "Байтовая длина слова: " . PHP_INT_SIZE . "\n";
+echo "Битовая длина слова: " . (PHP_INT_SIZE * 8) . "\n" . "\n";
 
