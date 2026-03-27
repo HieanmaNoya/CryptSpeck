@@ -1,7 +1,8 @@
 <?php
-include __DIR__ . "/moveBytes.php";
+include __DIR__ . "/roundSpeck.php";
 $mover = new moveBytes();
-const mR = 3;
+$rounds = new rounds();
+const mR = 8;
 const mL = 3;
 $key = [0x7061706572636c69, 0x7073646f6e657273];
 $pt1 = 0x7061706572636c67;
@@ -29,3 +30,4 @@ echo "Двоичное представление pt1: " . decbin($pt1) . "\n";
 echo "Байтовая длина слова: " . PHP_INT_SIZE . "\n";
 echo "Битовая длина слова: " . (PHP_INT_SIZE * 8) . "\n" . "\n";
 
+//echo "Результат одного раунда" . $rounds->round($pt1) . "\n";
