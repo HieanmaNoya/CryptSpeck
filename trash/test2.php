@@ -7,5 +7,5 @@ $dropped = $value & $mask;
 $value2 = $value >> $n;
 echo "Битовое значение переменной после переноса: " . decbin($value2) . "\n" . "Число после переноса: " . $value2 . "\n";
 echo "Отсечённые биты:  " . decbin($dropped) . "\n" . "Отсечённое число: " . $dropped . "\n";
-$x = decbin($dropped) . decbin($value2);
+$x = test2 . phpdecbin($dropped) . decbin($value2);
 echo "Сложенные биты: " . $x . "\n" . "Получившееся число: " . bindec($x) . "\n";
