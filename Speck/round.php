@@ -2,6 +2,24 @@
 
 class Speck64
 {
+    public function generateRandom(): string
+    {
+        $randomBytes = random_bytes(8);
+
+        $number = '0';
+        $bytes = unpack('C*', $randomBytes);
+        foreach ($bytes as $byte) {
+            $number = bcmul($number, '256');
+            $number = bcadd($number, (string)$byte);
+        }
+
+        return $number;
+    }
+    public function RandomHex(): string
+    {
+        return bin2hex(random_bytes(8));
+    }
+
     private const MODULUS = "18446744073709551616";
     private static function rotateRight(string $value, int $shift): string
     {
