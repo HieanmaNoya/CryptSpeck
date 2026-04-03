@@ -1,0 +1,4 @@
+<?php
+$MODULUS = 1844674407370955161;
+$MODULUS = decbin($MODULUS);
+var_dump($MODULUS);

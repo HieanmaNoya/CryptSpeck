@@ -2,7 +2,6 @@
 class Speck64
 {
     private const MODULUS = "18446744073709551616";
-
     private static function eightByteStringToBcNumber(string $eightByteString): string
     {
         $eightByteString = substr($eightByteString, 0, 8);

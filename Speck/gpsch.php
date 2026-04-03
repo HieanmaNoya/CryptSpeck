@@ -1,14 +1,14 @@
 <?php
-function secureRandom($length = 32) {
-    $chars = '012345678910';
-    $result = '';
-    $maxIndex = strlen($chars) - 1;
-
-    for ($i = 0; $i < $length; $i++) {
-        $result .= $chars[random_int(0, $maxIndex)];
+class LCG {
+    private $state;
+    public function __construct($seed, $a = 1103515245, $c = 12345, $m = 1 << 31) {
+        $this->state = $seed;
+        $this->a = $a;
+        $this->c = $c;
+        $this->m = $m;
     }
-
-    return $result;
+    public function next() {
+        $this->state = ($this->a * $this->state + $this->c) % $this->m;
+        return $this->state;
+    }
 }
-
-echo secureRandom(16);
